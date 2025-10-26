@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli animation</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<style>
+ @font-face {
+    font-family: 'Ownglyph_corncorn-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SinchonRhapsody';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2503@1.0/SinchonRhapsody.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{box-sizing: border-box;
+    margin: 0;
+}
+
+ul{list-style: none;  padding: 0;}
+a{text-decoration: none;}
+
+#header{
+    width: 100%; height: 70vh;
+    position: relative;
+}
+
+#headerImg{
+    width: 100%; height: 70vh;
+}
+
+#headerTitle{
+    position: absolute;
+    text-align: center;
+    top: 50%;  left: 50%;
+    transform: translate(-50%, -50%);
+
+     text-shadow: 0 0 1px #fff;
+}
+
+#headerTitle>h2{ font-family: 'Ownglyph_corncorn-Rg';
+font-size: 2em; }
+#headerTitle>h1{font-family: 'SinchonRhapsody';
+font-size: 3em;}
+#headerTitle>p{font-family: 'Ownglyph_corncorn-Rg';
+font-size: 1.3em; background-color: rgba(255,255,255,0.5);
+}
+
+#ani{
+    width: 100%; max-width: 1200px;
+    margin: auto;
+}
+
+#videoBox{   /*유튜브 영상이 담긴 박스*/
+    width: 100%; height: 0;
+    padding-bottom: 56.25%;
+    margin-top: 2%;
+    position: relative;
+}
+
+.youtube{     /*유튜브 영상*/
+    position: absolute;
+
+    width: 100%;  height: 100%;
+    border-radius: 10px;
+    pointer-events: none;    /*마우스나 손가락으로 터치할 때 반응이 일어나는 효과*/
+}
+
+.listBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.list{
+    position: relative;
+
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
+.thumb{
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.caption{ position: absolute;}
+
+.thumb:hover{
+    transform: scale(1.05);
+}
+
+.list>h3{
+    font-family: 'Ownglyph_corncorn-Rg';
+
+    margin-top: 3%;
+}
+
+.list>p{
+    font-family: 'Ownglyph_corncorn-Rg';
+
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.list>#iconTitle{
+    color: #fff; background-color: #048ABF;
+
+    border-radius: 10%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.3em;
+    padding-top: 0.1em;
+}
+
+.list>.icon{color: #fff;}
+
+#footer{
+    width: 100%; padding: 0.8em;
+    background-color: #222;
+}
+
+#subfooter{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#subfooter>h2{
+    font-family: 'Ownglyph_corncorn-Rg';
+    color: #fff;
+    font-size: 1em;
+}
+
+#subfooter>p{
+    font-family: 'Ownglyph_corncorn-Rg';
+    color: #fff;
+    font-size: 1em;
+
+    margin-left: 79%;
+}
+
+</style>
+
+<body>
+
+    <header id="header">
+        <img src="images/Ghibli_background.jpg" alt="지브리 배경" id="headerImg">
+        
+        <div id="headerTitle">
+            <h2>지브리 흥행 애니메이션 순위를 알아보자</h2>
+            <h1>스튜디오 지브리, 뭐부터 봐야할지 고민이라면</h1>
+            <p>1시간 30분 ~2시간 30분의 애니메이션을 통해 지브리만의 신비로움을 즐겨보세요</p>
+        </div>
+    
+     </header>   
+
+        <section id="ani">
+
+           <div id="videoBox">
+                <iframe class="youtube" width="640" height="360"  
+src="https://www.youtube.com/embed/i2BO46TSD-o?enablejsapi=1&version=2&playerapiid=ytplayer&controls=1&autoplay=1&mute=0&playsinline=1&loop=1&showinfo=0&rel=0&vq=hd1080&wmode=opaque&autohide=1&volume=0&playlist=i2BO46TSD-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+           </div>
+
+            <ul class="listBox">
+                <li class="list">
+                    <img src="images/Ghibli1.jpg" alt="센과 치히로의 행방불명" class="thumb">
+                    <h3>센과 치히로의 행방불명</h3>
+                    <p>"이 세상에는 쉬운 일은 하나도 없어" <br> 신비한 세계에서 부모를 잃은 치히로가 자신의 이름을 되찾기 위한 여정을 그린 이야기                    </p>
+                    <a id="iconTitle" href="https://www.ghibli.jp/works/chihiro/" target="_blank"><i class="fa-solid fa-angle-right icon"></i>더보기</a>
+                    
+                </li>
+                <li class="list">
+                    <img src="images/Ghibli2.jpg" alt="하울의 움직이는 성" class="thumb">
+                    <h3>하울의 움직이는 성</h3>
+                    <p>"내가 무서운 건 네가 사라질까 봐야"<br>저주로 노파가 된 소피가 마법사인 하울과 함께 사랑과 전쟁의 소용돌이 속에서 여행하는 판타지 이야기</p>
+                    <a id="iconTitle" href="https://www.ghibli.jp/works/howl/" target="_blank"><i class="fa-solid fa-angle-right icon"></i>더보기</a>
+                </li>
+                <li class="list">
+                    <img src="images/Ghibli3.jpg" alt="모노노케히메" class="thumb">
+                    <h3>모노노케히메</h3>
+                    <p>"살아라. 너는 아름답다"<br>인간과 자연의 갈등 속에서 한 왕자가 인간과 신령 사이에서 균형을 찾으려는 이야기</p>
+                    <a id="iconTitle" href="https://www.ghibli.jp/works/mononoke/" target="_blank" ><i class="fa-solid fa-angle-right icon"></i>더보기</a>
+                </li>
+                <li class="list">
+                    <img src="images/Ghibli4.jpg" alt="벼랑 위의 포뇨" class="thumb">
+                    <h3>벼랑 위의 포뇨</h3>
+                    <p>"포뇨는 소스케를 좋아해!"<br>물고기 소녀 포뇨가 인간이 되어 사랑을 찾는 따뜻한 모험 이야기</p>
+                    <a id="iconTitle" href="https://www.ghibli.jp/works/ponyo/" target="_blank"><i class="fa-solid fa-angle-right icon"></i>더보기</a>
+                </li>
+                <li class="list">
+                    <img src="images/Ghibli5.jpg" alt="바람이 분다" class="thumb">
+                    <h3>바람이 분다</h3>
+                    <p>"꿈은 이루어진다, 멋지지 않은가?"<br>전투기 설계를 꿈꾸는 한 남자의 이상과 사랑, 전쟁의 아이러니를 그린 드라마를 담은 이야기</p>
+                    <a id="iconTitle" href="https://www.ghibli.jp/works/kazetachinu/" target="_blank"><i class="fa-solid fa-angle-right icon"></i>더보기</a>
+                </li>
+                <li class="list">
+                    <img src="images/Ghibli6.jpg" alt="마루 밑 아리에티" class="thumb">
+                    <h3>마루 밑 아리에티</h3>
+                    <p>"우리 존재는 들키지 않는 게 규칙이야."<br>인간에게 들키지 않고 살아가는 소인족 아리에티와 쇼이 만남과 우정을 그린 이야기</p>
+                    <a id="iconTitle" href="https://www.ghibli.jp/works/karigurashi/" target="_blank"><i class="fa-solid fa-angle-right icon"></i>더보기</a>
+                </li>
+            </ul>
+       </section>
+
+            <footer id="footer">
+                <div id="subfooter">
+                    <h2>Japanese Animation</h2>
+                    <p>© 2005-2025 STUDIO GHIBLI Inc</p>
+                </div>
+            </footer>
+    
+</body>
+
+</html>

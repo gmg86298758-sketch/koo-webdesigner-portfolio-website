@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'KCCPakKyongni';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCPakKyongni.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KakaoBigSans-ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NIXGONM-Vb';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{ font-family: "Pretendard", sans-serif; color: #333; background-color: #fff; } 
+li{ list-style-type: none;}
+a{ text-decoration: none; color: inherit;}
+img{ max-width: 100%; display: block;}
+
+header{
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    background-color: #B2B0E8;
+}
+
+.inner{
+    width: 90%; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-img{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img{
+    width: 48%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    object-fit: cover;
+}
+
+.logo{
+    font-size: 32px;
+    font-family: 'KCCPakKyongni';
+    margin-top: 5px;
+}
+
+.navi ul{
+    display: flex;
+    gap: 20px;
+}
+
+.navi ul li a{
+    display: block;
+    font-family: 'KCCPakKyongni';
+    font-weight: bold;
+    font-size: 26px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.navi ul li a:hover{
+    color: #1A2A80;
+}
+
+
+ /* 공통 섹션 */
+section{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+
+/* about */
+.about{
+    position: relative;
+    background-color: #fff;
+}
+
+.about .inner{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text h2{
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.about-text p{
+    font-size: 26px;
+    color: #1A2A80;
+}
+
+.about img{
+    width: 700px; 
+    border-radius: 20px;
+    box-sizing: 0 5px 15px rgba(0,0,0,.1);
+}
+
+.about.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* skills */
+.skills{
+    background-color:rgb(0, 0, 49);
+}
+
+.skills .inner{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.skills h2{
+    font-size: 28px;
+    margin-bottom: 35px;
+    color: #fff;
+}
+
+.skills-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.skills-grid div{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: 0 3px 6px rgba(0,0,0,0.05);
+}
+
+.skills-grid h3{
+    margin-bottom: 10px;
+    color: #1A2A80;
+}
+
+.skills{
+    transform: translateY(100px);
+}
+
+.skills.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* works */ 
+.works{ 
+    background-color: rgb(255, 249, 239); 
+    text-align: center; 
+} 
+
+.works .inner{ 
+    width: 90%; 
+    margin: auto; 
+} 
+
+.works h2{ 
+    font-size: 28px;
+    margin-bottom: 30px; 
+} 
+
+.works-grid{ 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
+    gap: 20px; 
+} 
+
+.works-grid img{ 
+    cursor: pointer; 
+    border-radius: 10px; transition: 0.3s; } .works-grid img:hover{ transform: scale(1.05); } .works{ transform: translateX(100px); } .works.active{ opacity: 1; transform: translateX(0); }
+
+/* modal */
+.modal{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 1000;
+}
+
+.modal .fadeIn{
+    display: flex !important;
+}
+
+.modal-content{
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close{
+    position: absolute;
+    top: 20px; right: 40px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+/* footer */
+footer{
+    padding: 30px 0;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+}

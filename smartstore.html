@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartstore</title>
+
+    <!-- 네이버 폰트 및 폰트 어썸(FontAwesome) 연결 -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+    <style>
+
+    /*페이퍼로지 웹폰트(눈누)*/
+    @font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+        *{         /*전체 공통 스타일*/
+            font-family: 'NanumSquareNeo';
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        ul{       /*모든 리스트 공통 스타일*/
+            list-style: none; padding: 0;
+        }
+
+        #ranking{       /*Ranking 섹션 영역*/
+            width: 95%;    max-width: 1200px;        /*컴퓨터/휴대폰 등의 화면 크기에 95%를 채운다*/
+            margin: 50px auto;
+        }
+
+
+        .sectionTitle{        /*섹션 제목*/
+            font-size: 2em;
+            text-align: center;
+            margin: 1em 0;
+            font-family: 'Paperlogy-8ExtraBold';
+        }
+
+        #titleicon{
+            color: #ffdde1;
+            margin: 0.3em;
+        }
+
+
+        .listBox{    /*상품 listBox ul 영역*/
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .list{      /*상품 list 섹션 영역*/
+            position: relative;
+        }
+
+        .imageBox{    /*상품 이미지 효과용 박스*/
+            overflow: hidden;   /*박스 바깥 부분은 숨기기*/
+            border-radius: 10px;
+        }
+
+        /*이미지 박스에 닿으면, 이미지를 확대하기*/
+        .imageBox:hover>.thumb{
+            transform: scale(1.05);
+
+        }
+        .thumb{   /*상품 이미지 img 영역*/
+            width: 100%;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .best{   /*순위 img 영역*/
+            position: absolute;
+             top: 0; left: 10px;
+            width: 15%; max-width: 50%;
+        }
+
+        .iconBox{     /*아이콘박스 영역*/
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            opacity: 0;
+            transition: 0.3s;
+            }
+
+            /*각 리스트에 닿으면, 아이콘 박스 보이기*/
+            .list:hover>.iconBox{opacity: 1;}
+
+        .favorite, .add{   /*관심상품과  추가상품 공통*/
+            font-size: 2em;
+            margin: 0, 10px;
+        }
+
+        .favorite{     /*관심상품 아이콘*/
+            color: #EF3B36;
+        }
+
+        .add{    /*추가 아이콘*/
+            color: aliceblue;
+        }
+
+        .productTitle{     /*제품 타이틀*/
+            margin: 0.5em;
+            line-height: 1.3em;
+        }
+
+        .price{      /*할인 가격*/
+            color: #f00;
+            font-size: 1.5em;
+            display: inline-block;
+        }
+
+        .price2{   /*원래 가격*/
+            font-size: 1em;
+            font-weight: normal;
+            color: #666;
+            text-decoration: line-through;
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+        .comment{    /*제품 설명*/
+            margin-top: 1em;
+            font-size: 0.9em;
+            color: darkgrey;
+            line-height: 1.3em;
+        }
+
+        @media screen and (max-width:850px){
+            .listBox{    /*상품 listBox ul 영역*/
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        }
+
+        @media screen and (max-width:450px){
+            .listBox{    /*상품 listBox ul 영역*/
+            display: grid;
+            grid-template-columns: 100%;
+            gap: 20px;
+        }
+        }
+
+    </style>
+
+<body>
+
+    <section id="ranking">
+
+        <h2 class="sectionTitle"><i class="fa-regular fa-star" id="titleicon"></i>주간 RANKING<i class="fa-regular fa-star" id="titleicon"></i></h2>
+
+        <ul class="listBox">
+            <li class="list">
+                <div class="imageBox"><img src="image/dress1.jpg" alt="셀레나 결혼식 하객 원피스" class="thumb"></div>
+                <img src="image/BEST1.png" alt="1순위" class="best">
+                <div class="iconBox">
+                    <a href="#"><i class="fa-solid fa-heart favorite"></i></a>                  <!--관심상품 아이콘-->
+                    <a href="https://smartstore.naver.com/j-view/products/5834465531"><i class="fa-solid fa-circle-plus add"></i></a>          <!--추가상품 아이콘-->
+                </div>
+                 <h3 class="productTitle">[자체제작/당일발송]셀레나 결혼식 하객 원피스</h3>
+                 <h3 class="price">64,000원</h3>   <!--할인 가격-->
+                 <h3 class="price2">84,000원</h3>   <!--원래 가격-->
+                 <p class="comment">✔ 그레이스 결혼식 하객원피스 여름에 단독으로 입기 좋은 두께감. 행사용으로도 많이 착용하는 디자인이라 사계절 내내 주문량이 많은 제품입니다. </p>
+            </li>
+
+            <li class="list">
+                <div class="imageBox"><img src="image/dress2.jpg" alt="-3kg 골지 니트 가디건" class="thumb"></div>
+                <img src="image/BEST2.png" alt="2순위" class="best">
+                <div class="iconBox">
+                    <a href="#"><i class="fa-solid fa-heart favorite"></i></a>                  <!--관심상품 아이콘-->
+                    <a href="https://smartstore.naver.com/j-view/products/11769164870"><i class="fa-solid fa-circle-plus add"></i></a>          <!--추가상품 아이콘-->
+                </div>    
+                <h3 class="productTitle">[모델초강추]-3kg 골지 니트 가디건</h3>
+                <h3 class="price">32,000원</h3>   <!--할인 가격-->
+                <h3 class="price2">44,000원</h3>   <!--원래 가격-->
+                <p class="comment">✔ 입었을 때 정~~말 말라보였던 가디건 제품 소개해드려요! 여리여리, 페미닌 스타일을 좋아하시는 고객님은 진짜 저 믿고 꼭 구매해보시라고 추천해드려요.</p>
+            </li>
+
+            <li class="list">
+                <div class="imageBox"><img src="image/dress3.jpg" alt="리즈 글램 스퀘어넥 원피스" class="thumb"></div>
+                <img src="image/BEST3.png" alt="3순위" class="best">
+                <div class="iconBox">
+                    <a href="#"><i class="fa-solid fa-heart favorite"></i></a>                  <!--관심상품 아이콘-->
+                    <a href="https://smartstore.naver.com/j-view/products/11769136877"><i class="fa-solid fa-circle-plus add"></i></a>          <!--추가상품 아이콘-->
+                </div>    
+                <h3 class="productTitle">[모델초강추]-3kg 골지 니트 가디건</h3>
+                <h3 class="price">27,500원</h3>   <!--할인 가격-->
+                <h3 class="price2">39,700원</h3>   <!--원래 가격-->
+                <p class="comment">✔ 인스타그램 업데이트 후 문의가 너무너무 많아 일정을 급하게 당겨서 업데이트하는 제품이에요.</p>
+            </li>
+
+            <li class="list">
+                <div class="imageBox"><img src="image/dress4.jpg" alt="루나 몸매보정 원피스" class="thumb"></div>
+                <img src="image/BEST4.png" alt="4순위" class="best">
+                <div class="iconBox">
+                    <a href="#"><i class="fa-solid fa-heart favorite"></i></a>                  <!--관심상품 아이콘-->
+                    <a href="https://smartstore.naver.com/j-view/products/11347688160"><i class="fa-solid fa-circle-plus add"></i></a>          <!--추가상품 아이콘-->
+                </div>    
+                <h3 class="productTitle">[자체제작][스탠다드/롱버전]루나 몸매보정 골지 브이넥 원피스</h3>
+                <h3 class="price">28,600원</h3>   <!--할인 가격-->
+                <h3 class="price2">32,400원</h3>   <!--원래 가격-->
+                <p class="comment">✔ 인스타그램 업데이트 후 문의가 정말 많았던 제품이에요. 원피스 핏이 너무 예뻐서 전 고객님 예쁘게 착용하실 수 있도록 두가지 기장으로 제작했습니다!</p>
+            </li>
+        </ul>
+
+
+    </section>
+
+
+    
+</body>
+
+</html>
